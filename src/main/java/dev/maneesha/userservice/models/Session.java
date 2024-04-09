@@ -17,6 +17,9 @@ public class Session extends BaseModel {
     private Date expiringAt;
     @ManyToOne
     private User user;
+    //it will save the enum type in integer value
+    //this can cause issue if:-
+    //diff environment has diff config , more specific diff db(indexing will be diff)
     @Enumerated(EnumType.ORDINAL)
     private SessionStatus sessionStatus;
 }
